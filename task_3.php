@@ -36,34 +36,31 @@
                                 $links = [
                                     'link1' => [
                                         'link' => 'Главная',
-                                        'tag-open'  =>  '<a href="#">',
-                                        'tag-close' =>  '</a>',
                                         'class' =>  ['breadcrumb-item']
                                     ],
                                     'link2' => [
                                         'link' => 'PHP',
-                                        'tag-open'  =>  '<a href="#">',
-                                        'tag-close' =>  '</a>',
                                         'class' =>  ['breadcrumb-item']
                                     ],
                                     'link3' => [
                                         'link' => 'Функции',
-                                        'tag-open'  =>  '',
-                                        'tag-close' =>  '',
-                                        'class' =>  ['breadcrumb-item', ' ', 'active']
+                                        'class' =>  ['active']
                                     ],
                                 ];
                             ?>
                             <ol class="breadcrumb page-breadcrumb">
                                 <?php 
-                                
-                                    foreach ($links as $link) { ?>
-                                        <li class="<?php 
-                                            foreach ($link['class'] as $class) {
-                                                echo $class;
+                                    foreach ($links as $link){
+                                        foreach ($link['class'] as $class){
+                                            if ($class == "active"){?>
+                                                <li class="breadcrumb-item active"><?php echo $link['link']?></li> <?php
                                             }
-                                        ?>"><?php echo $link['tag-open']?><?php echo $link['link']?><?php echo $link['tag-close']?></li>
-                                    <?php } ?>
+                                            else{?>
+                                                <li class="breadcrumb-item"><a href="#"><?php echo $link['link']?></a></li><?php
+                                            }
+                                        };
+                                    };
+                                ?>
                             </ol>
                         </div>
                     </div>
