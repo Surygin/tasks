@@ -33,24 +33,22 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-                        <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-                        <?php foreach ($lesson5 as $n) {?>
-                            
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                           <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
+                            <?php foreach($lesson5 as $n){?>
+                            <div class="<?php echo $n['class']?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                 <img src="<?php echo $n['img']['path']?>" alt="<?php echo $n['img']['alt']?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                 <div class="ml-2 mr-3">
                                     <h5 class="m-0">
-                                        <?php echo $n['name']?>
+                                    <?php echo $n['tite']?>
                                         <small class="m-0 fw-300">
-                                            <?php echo $n['role']?>
+                                        <?php echo $n['role']?>
                                         </small>
                                     </h5>
                                     <a href="<?php echo $n['contact1']?>" class="text-info fs-sm" target="_blank"><?php echo $n['contact1-title']?></a> -
                                     <a href="<?php echo $n['contact2']?>" class="text-info fs-sm" target="_blank" title="<?php echo $n['contact2-title']?>"><i class="fal fa-envelope"></i></a>
                                 </div>
-                            </div><?php
-                        }?>
-                           
+                            </div>
+                            <?php } ?>
                             
                         </div>
                         </div>

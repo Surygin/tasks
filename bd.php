@@ -44,6 +44,7 @@
 
   $lesson5 = [
               'person1' =>  [
+                              'class' =>  '',
                               'name'  =>  'Sunny A. (UI/UX Expert)',
                               'role'  =>  'Lead Author',
                               'img'   =>  [
@@ -56,6 +57,7 @@
                               'contact2-title' =>  'Contact Sunny',
               ],
               'person2' =>  [
+                              'class' =>  '',
                               'name'  =>  'Jos K. (ASP.NET Developer)',
                               'role'  =>  'Partner &amp; Contributor',
                               'img'   =>  [
@@ -68,6 +70,7 @@
                               'contact2-title' =>  'Contact Sunny',
               ],
               'person3' =>  [
+                              'class' =>  'banned',
                               'name'  =>  'Jovanni L. (PHP Developer)',
                               'role'  =>  'Partner &amp; Contributor',
                               'img'   =>  [
@@ -80,6 +83,7 @@
                               'contact2-title' =>  'Contact Jovanni',
               ],
               'person4' =>  [
+                                'class' =>  'banned',
                                 'name'  =>  'Roberto R. (Rails Developer)',
                                 'role'  =>  'Partner &amp; Contributor',
                                 'img'   =>  [
