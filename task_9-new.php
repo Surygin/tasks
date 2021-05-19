@@ -2,10 +2,6 @@
 
 include('db/db-for9.php');
 
-# получение информации о всех пользователях
-
-$data = $db->query("SELECT * FROM `lesson-9`")->fetchAll(PDO::FETCH_ASSOC);
-
 $text = $_POST['text'];
 
 # var_dump($text);
@@ -17,6 +13,8 @@ $insert = $db->prepare("INSERT INTO `lesson-9` (`text`) VALUES (:some_text)");
 $insert->bindParam(":some_text", $text);
 $insert->execute();
 
+# получение информации о всех пользователях
+$data = $db->query("SELECT * FROM `lesson-9`")->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
