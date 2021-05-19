@@ -4,14 +4,21 @@ include('db/db-for9.php');
 
 $text = $_POST['text'];
 
-# var_dump($text);
+# получение информации о всех пользователях
+$data = $db->query("SELECT * FROM `lesson-9`")->fetchAll(PDO::FETCH_ASSOC);
 
-# добавление записи
-# $query = $db->query("INSERT INTO `lesson-9` (text) VALUES (`$text`)");
+foreach ($data as $i) {
+    if ($text == $i['text']){
+        header('Location:http://localhost:8888/phpStep10/tasks/task_10.php');
+    }
+    else{
+        $insert = $db->prepare("INSERT INTO `lesson-9` (`text`) VALUES (:some_text)");
+        $insert->bindParam(":some_text", $text);
+        $insert->execute();
+    };
 
-$insert = $db->prepare("INSERT INTO `lesson-9` (`text`) VALUES (:some_text)");
-$insert->bindParam(":some_text", $text);
-$insert->execute();
+};
+
 
 # получение информации о всех пользователях
 $data = $db->query("SELECT * FROM `lesson-9`")->fetchAll(PDO::FETCH_ASSOC);
