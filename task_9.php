@@ -1,5 +1,11 @@
+<?php 
+
+include('db/db-for9.php');
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
         <meta charset="utf-8">
         <title>
@@ -35,9 +41,9 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <form action="">
+                                    <form method="POST" action="task_9-new.php">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
+                                        <input type="text" id="simpleinput" class="form-control" name="text">
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
