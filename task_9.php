@@ -50,7 +50,7 @@ include('db/db-for9.php');
                                     <?php }
                                     unset($_SESSION['message']);
                                     ?>
-                                    <form method="POST" action="task_9-new.php">
+                                    <form method="POST" action="task_9-add.php">
                                         <label class="form-label" for="simpleinput">Text</label>
                                         <input type="text" id="simpleinput" class="form-control" name="text">
                                         <button class="btn btn-success mt-3">Submit</button>
