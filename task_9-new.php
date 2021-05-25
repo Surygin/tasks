@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 include('db/db-for9.php');
 
 $text = $_POST['text'];
@@ -9,7 +11,8 @@ $data = $db->query("SELECT * FROM `lesson-9`")->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($data as $i) {
     if ($text == $i['text']){
-        header('Location:http://localhost:8888/phpStep10/tasks/task_9.php?msg=error');
+        $_SESSION['message'] = ['msg' => 'error'];
+        header('Location:http://localhost:8888/phpStep10/tasks/task_9.php');
         die;
     }
 
