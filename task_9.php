@@ -41,6 +41,11 @@ include('db/db-for9.php');
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
+                                    <?php if($_GET['msg'] == 'error') {?>
+                                    <div class="alert alert-danger fade show" role="alert">
+                                        You should check in on some of those fields below.
+                                    </div>
+                                    <?php }?>
                                     <form method="POST" action="task_9-new.php">
                                         <label class="form-label" for="simpleinput">Text</label>
                                         <input type="text" id="simpleinput" class="form-control" name="text">
