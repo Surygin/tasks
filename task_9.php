@@ -43,12 +43,19 @@ include('db/db-for9.php');
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <?php if($_SESSION['message']['msg'] == 'error') {?>
+                                    <?php if(!empty($_SESSION['danger'])) {?>
                                     <div class="alert alert-danger fade show" role="alert">
-                                        You should check in on some of those fields below.
+                                        <?php echo $_SESSION['danger']; ?>
                                     </div>
                                     <?php }
-                                    unset($_SESSION['message']);
+                                    unset($_SESSION['danger']);
+                                    ?>
+                                    <?php if(!empty($_SESSION['success'])) {?>
+                                    <div class="alert alert-success fade show" role="alert">
+                                        <?php echo $_SESSION['success']; ?>
+                                    </div>
+                                    <?php }
+                                    unset($_SESSION['success']);
                                     ?>
                                     <form method="POST" action="task_9-add.php">
                                         <label class="form-label" for="simpleinput">Text</label>
